@@ -607,6 +607,7 @@ function heroSVG(key, pose) {
   return `<svg class="hero-svg" viewBox="0 0 200 250" role="img" aria-label="${h.nome}" xmlns="http://www.w3.org/2000/svg">
   <g stroke="${K}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
     <path d="${capePath}" fill="${h.cape}"/>
+    <path d="${fly ? "M70 140 Q40 180 26 226" : "M70 142 Q56 196 58 234"}" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="7"/>
     <rect x="72" y="190" width="24" height="40" rx="10" fill="${h.suit}"/>
     <rect x="104" y="190" width="24" height="40" rx="10" fill="${h.suit}"/>
     <rect x="67" y="217" width="31" height="21" rx="9" fill="${h.boot}"/>
@@ -623,6 +624,7 @@ function heroSVG(key, pose) {
     ${h.pig ? `<circle cx="40" cy="58" r="17" fill="${h.hair}"/><circle cx="160" cy="58" r="17" fill="${h.hair}"/>` : ""}
     <circle cx="100" cy="84" r="58" fill="${h.skin}"/>
     <path d="M44 78 Q40 26 100 24 Q160 26 156 78 Q146 54 128 58 Q118 40 100 52 Q84 40 72 58 Q54 54 44 78 Z" fill="${h.hair}"/>
+    <path d="M66 42 Q84 31 104 31" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="5"/>
     <path d="M154 84 Q174 76 182 92 Q168 92 156 98 Z" fill="${h.mask}" stroke-width="4"/>
     <path d="M42 80 Q100 62 158 80 Q161 96 152 107 Q126 98 100 106 Q74 98 48 107 Q39 96 42 80 Z" fill="${h.mask}"/>
     <ellipse cx="78" cy="88" rx="13" ry="15" fill="#fff" stroke-width="4"/>
