@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aniversário do João Lucas – 5 anos</title>
+<meta name="description" content="Atenção, herói! Você foi convocado para o aniversário de 5 anos do João Lucas. Abra sua missão e confirme presença!">
+<meta name="theme-color" content="#1e6fd9">
+
+<!-- Open Graph (prévia do link no WhatsApp, Facebook, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Aniversário do João Lucas – 5 anos">
+<meta property="og:description" content="🦸 Atenção, herói! Você foi convocado para o esquadrão do João Lucas. 26/11 às 15h no Enjoy Kids – Shopping Liv Mall. Toque para abrir sua missão!">
+<!-- Opcional: para aparecer uma imagem na prévia, coloque um PNG/JPG (1200x630) no site e descomente:
+<meta property="og:image" content="https://SEU-SITE/capa.png">
+-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Aniversário do João Lucas – 5 anos">
+<meta name="twitter:description" content="Você foi convocado para o esquadrão do João Lucas! 26/11 às 15h.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Bangers&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#e63946; --red-d:#b5171f; --blue:#1e6fd9; --blue-d:#0b3d91;
+  --yellow:#ffd60a; --gold:#ffb703; --green:#2bb24c; --green-d:#1a7f33;
+  --purple:#7b2cbf; --ink:#14142b; --paper:#fff8e7;
+  --shadow:6px 6px 0 var(--ink);
+  --burst:polygon(50% 0%,61% 18%,79% 8%,78% 30%,100% 30%,86% 47%,100% 64%,79% 68%,82% 90%,62% 80%,50% 100%,38% 80%,18% 90%,21% 68%,0% 64%,14% 47%,0% 30%,22% 30%,21% 8%,39% 18%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Baloo 2',system-ui,sans-serif; color:var(--ink); line-height:1.35;
+  background-color:var(--paper);
+  background-image:radial-gradient(rgba(20,20,43,.13) 1.3px,transparent 1.7px);
+  background-size:11px 11px;
+  min-height:100vh; overflow-x:hidden;
+}
+button{font:inherit;color:inherit;cursor:pointer;border:none;background:none;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus{outline:none}
+:focus-visible{outline:4px solid var(--yellow);outline-offset:3px;box-shadow:0 0 0 8px var(--ink)!important}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero-svg{display:block;width:100%;height:auto;overflow:visible}
+
+/* ---------- Botão de som ---------- */
+#soundBtn{
+  position:fixed;top:12px;right:12px;z-index:100;width:52px;height:52px;border-radius:50%;
+  background:var(--yellow);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);
+  font-size:1.5rem;display:grid;place-items:center;transition:transform .15s;
+}
+#soundBtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- Telas ---------- */
+.screen{display:none;min-height:100vh;min-height:100dvh}
+.screen.active{display:block;animation:fadeIn .5s both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ---------- Intro ---------- */
+#intro{
+  position:fixed;inset:0;overflow:hidden;cursor:pointer;
+  background:radial-gradient(circle at 50% 50%,#4a9bff 0%,var(--blue) 42%,var(--blue-d) 100%);
+}
+#intro.active{display:flex;align-items:center;justify-content:center}
+#intro::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.12) 1.4px,transparent 1.8px);background-size:12px 12px}
+.rays{
+  position:absolute;left:50%;top:50%;width:250vmax;height:250vmax;margin:-125vmax 0 0 -125vmax;
+  background:repeating-conic-gradient(rgba(255,214,10,.42) 0 9deg,transparent 9deg 18deg);
+  animation:spin 40s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.intro-content{position:relative;z-index:2;text-align:center;padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.intro-kicker{
+  font-family:'Bangers',cursive;letter-spacing:.04em;font-size:clamp(2.4rem,11vw,3.8rem);line-height:1;color:var(--yellow);
+  text-shadow:3px 3px 0 var(--ink),-2px -2px 0 var(--ink),2px -2px 0 var(--ink),-2px 2px 0 var(--ink),6px 6px 0 var(--ink);
+  transform:rotate(-3deg);
+}
+.intro-title{
+  font-family:'Bangers',cursive;font-weight:400;letter-spacing:.04em;font-size:clamp(1.6rem,7vw,2.6rem);color:#fff;
+  background:var(--red);border:4px solid var(--ink);box-shadow:var(--shadow);padding:4px 18px;transform:rotate(2deg);
+}
+.intro-title span{color:var(--yellow)}
+.intro-hero{width:min(60vw,290px,38vh);margin:8px 0 0;border-radius:24px}
+.intro-hero .float{animation:bob 2.4s ease-in-out infinite;filter:drop-shadow(0 18px 10px rgba(0,0,0,.25))}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+.tap-seal{
+  font-family:'Bangers',cursive;letter-spacing:.06em;font-size:1.5rem;background:var(--yellow);
+  border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:4px 18px;border-radius:999px;
+  animation:pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.boom{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;background:var(--yellow);clip-path:var(--burst);opacity:0;z-index:3;pointer-events:none}
+#intro.launch .intro-hero .float{animation:takeoff 1s cubic-bezier(.5,0,.8,.4) forwards}
+#intro.launch .tap-seal,#intro.launch .intro-kicker,#intro.launch .intro-title{transition:opacity .4s;opacity:0}
+#intro.launch .boom{animation:boom 1.2s ease-out .25s forwards}
+@keyframes takeoff{0%{transform:translateY(0)}20%{transform:translateY(24px) scale(1.08,.9)}100%{transform:translateY(-130vh) scale(.6)}}
+@keyframes boom{0%{opacity:0;transform:scale(.2) rotate(0)}15%{opacity:1}60%{opacity:1;transform:scale(32) rotate(40deg)}100%{opacity:0;transform:scale(48) rotate(60deg)}}
+
+/* ---------- História ---------- */
+#story{
+  background-color:#1b2a5c;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1.4px,transparent 1.8px);background-size:12px 12px;
+}
+#story.active{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:72px 12px 16px}
+.chip{
+  position:fixed;top:14px;left:12px;z-index:90;font-family:'Bangers',cursive;letter-spacing:.06em;font-size:1.2rem;
+  background:#fff;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);border-radius:999px;padding:6px 16px;
+}
+.book{position:relative;width:min(94vw,500px,82vh);height:min(70vh,680px);height:min(70dvh,680px);perspective:1800px}
+.page{
+  position:absolute;inset:0;background:#fff;border:5px solid var(--ink);border-radius:6px;overflow:hidden;cursor:pointer;
+  box-shadow:8px 8px 0 rgba(0,0,0,.55);transform-origin:left center;backface-visibility:hidden;
+  transition:transform .85s cubic-bezier(.55,.05,.35,1),opacity .85s ease-in;
+  user-select:none;-webkit-user-select:none;
+}
+.page.flipped{transform:rotateY(-115deg);opacity:0;pointer-events:none}
+.scene{position:absolute;inset:0;overflow:hidden}
+.page-num{position:absolute;bottom:6px;right:10px;z-index:6;font-family:'Bangers',cursive;font-size:1rem;background:#fff;border:2px solid var(--ink);border-radius:6px;padding:0 6px}
+.cap{position:absolute;top:0;left:0;z-index:5;background:var(--yellow);border-right:4px solid var(--ink);border-bottom:4px solid var(--ink);font-family:'Bangers',cursive;letter-spacing:.05em;padding:4px 12px;font-size:clamp(1rem,4.2vw,1.25rem)}
+.slot{position:absolute;z-index:3}
+.slot .hero-svg{animation:bob 2.6s ease-in-out infinite}
+.slot.b2 .hero-svg{animation-delay:-.7s}.slot.b3 .hero-svg{animation-delay:-1.3s}.slot.b4 .hero-svg{animation-delay:-1.9s}
+
+.balloon{
+  position:absolute;z-index:4;background:#fff;border:3px solid var(--ink);border-radius:22px;padding:8px 14px;
+  font-weight:700;font-size:clamp(.95rem,4vw,1.2rem);line-height:1.2;box-shadow:4px 4px 0 var(--ink);max-width:64%;
+}
+.balloon::after{
+  content:'';position:absolute;width:20px;height:20px;background:#fff;bottom:-12px;left:var(--tx,26px);
+  border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg) skew(12deg,12deg);
+}
+.balloon .who{display:block;font-family:'Bangers',cursive;font-weight:400;letter-spacing:.06em;font-size:.85em;color:var(--red)}
+.balloon strong{color:var(--blue)}
+
+.ono{
+  position:absolute;z-index:5;
+  filter:drop-shadow(3px 0 0 var(--ink)) drop-shadow(-3px 0 0 var(--ink)) drop-shadow(0 3px 0 var(--ink)) drop-shadow(0 -3px 0 var(--ink)) drop-shadow(5px 5px 0 var(--ink));
+}
+.ono .bg{position:absolute;inset:-38% -18%;background:var(--red);clip-path:var(--burst)}
+.ono > span{position:relative;display:block;font-family:'Bangers',cursive;letter-spacing:.04em;color:var(--yellow);font-size:clamp(2rem,10vw,3.3rem);line-height:1;white-space:nowrap}
+.ono.center{left:0;right:0;margin:auto;width:max-content}
+
+.pop{opacity:0}
+.page.show .pop{animation:popIn .55s var(--d,0s) both cubic-bezier(.2,1.6,.4,1)}
+@keyframes popIn{from{opacity:0;transform:scale(.2) rotate(var(--rot,0deg))}to{opacity:1;transform:scale(1) rotate(var(--rot,0deg))}}
+.fly{opacity:0}
+.page.show .fly{animation:flyIn 1s var(--d,0s) both cubic-bezier(.2,.9,.3,1.1)}
+@keyframes flyIn{from{opacity:0;transform:translate(-140%,50%) rotate(-30deg) scale(.6)}to{opacity:1;transform:rotate(-10deg)}}
+
+/* Cenas */
+.sunset{background:linear-gradient(#ff5e62 0%,#ff9966 38%,#ffd166 62%,#f77f00 100%)}
+.sunset svg{position:absolute;inset:0;width:100%;height:100%}
+.alert::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,0,40,.45),transparent 60%);animation:alertPulse 1s ease-in-out infinite}
+@keyframes alertPulse{50%{opacity:.15}}
+.siren-light{animation:siren .5s steps(1) infinite}
+@keyframes siren{0%{fill:#ff1f3d}50%{fill:#2f7bff}}
+.hq{background:linear-gradient(#0b1d4d,#1b3a8a 62%,#0b1d4d 62%)}
+.hq::after{content:'';position:absolute;left:0;right:0;bottom:0;height:38%;
+  background:repeating-linear-gradient(90deg,rgba(90,170,255,.35) 0 2px,transparent 2px 40px),repeating-linear-gradient(0deg,rgba(90,170,255,.35) 0 2px,transparent 2px 26px)}
+.monitor{
+  position:absolute;top:11%;left:14%;right:14%;height:19%;background:#021a3a;border:4px solid var(--ink);border-radius:10px;
+  box-shadow:0 0 0 5px #4a5a7a,6px 6px 0 5px var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;
+}
+.monitor b{font-family:'Bangers',cursive;font-weight:400;font-size:clamp(1.6rem,8vw,2.6rem);color:#ff3355;letter-spacing:.06em;animation:blink .8s steps(1) infinite}
+.monitor small{color:#7fd1ff;font-weight:700;font-size:.8rem;letter-spacing:.08em}
+@keyframes blink{50%{opacity:.25}}
+.rays-red{background:repeating-conic-gradient(from 0deg at 50% 50%,#e63946 0 8deg,#ff6b6b 8deg 16deg)}
+.rays-gold{background:repeating-conic-gradient(from 0deg at 50% 40%,#ffd60a 0 8deg,#ffb703 8deg 16deg)}
+.speed{position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent 0 26px,rgba(255,255,255,.55) 26px 29px,transparent 29px 70px);animation:speed .6s linear infinite}
+@keyframes speed{to{background-position:-140px 0}}
+.blue-dots{background-color:var(--blue);background-image:radial-gradient(rgba(255,255,255,.22) 2px,transparent 2.6px);background-size:14px 14px}
+.info-card{
+  position:absolute;top:7%;left:6%;right:6%;z-index:4;background:#fff;border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);
+  border-radius:10px;padding:12px 14px;font-weight:700;font-size:clamp(1rem,4.2vw,1.2rem);
+}
+.info-card .ih{font-family:'Bangers',cursive;font-weight:400;letter-spacing:.06em;font-size:1.5rem;color:#fff;background:var(--red);border:3px solid var(--ink);display:inline-block;padding:0 12px;transform:rotate(-3deg);margin:-26px 0 6px -4px}
+.info-card p{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:2px dashed #d5d5d5}
+.info-card p:last-child{border:0}
+.info-card .ic{font-size:1.4em}
+.accept-wrap{position:absolute;left:0;right:0;bottom:4%;z-index:6;text-align:center}
+
+/* Navegação */
+.story-nav{display:flex;align-items:center;gap:14px}
+.nav-btn{width:50px;height:50px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-size:1.2rem;display:grid;place-items:center}
+.nav-btn:disabled{opacity:.35;cursor:default}
+.dots{display:flex;gap:8px}
+.dots button{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--ink);opacity:.6;transition:all .2s}
+.dots button[aria-current="true"]{background:var(--yellow);opacity:1;transform:scale(1.3)}
+.hint{color:#cfe0ff;font-size:.9rem;font-weight:600;text-align:center}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Bangers',cursive;letter-spacing:.05em;
+  font-size:1.3rem;padding:10px 16px;border:3px solid var(--ink);border-radius:10px;box-shadow:4px 4px 0 var(--ink);
+  text-decoration:none;color:var(--ink);background:#fff;transition:transform .1s,box-shadow .1s;line-height:1.1;text-align:center;
+}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-yellow{background:var(--yellow)}
+.btn-red{background:var(--red);color:#fff}
+.btn-green{background:var(--green);color:#fff}
+.btn-wa{background:#25d366;color:#fff;width:100%;font-size:1.6rem;padding:14px;text-shadow:2px 2px 0 var(--ink)}
+.btn-accept{font-size:clamp(1.4rem,6vw,1.9rem);padding:10px 24px;background:var(--green);color:#fff;animation:pulse 1.1s ease-in-out infinite;text-shadow:2px 2px 0 var(--ink)}
+
+/* ---------- Convite ---------- */
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+.reveal{opacity:0}
+#invite.on .reveal{animation:rise .65s calc(var(--i,0) * 140ms) both cubic-bezier(.2,1.3,.4,1)}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:none}}
+.banner{
+  position:relative;margin-top:56px;text-align:center;padding:22px 12px 24px;border:4px solid var(--ink);box-shadow:var(--shadow);border-radius:8px;
+  background-color:var(--red);background-image:radial-gradient(rgba(255,255,255,.16) 2px,transparent 2.6px);background-size:12px 12px;color:#fff;
+}
+.banner p{font-weight:800;font-size:1.05rem}
+.banner h1{
+  font-family:'Bangers',cursive;font-weight:400;letter-spacing:.04em;font-size:clamp(3rem,15vw,5rem);line-height:1;color:var(--yellow);margin:4px 0;
+  text-shadow:3px 3px 0 var(--ink),-2px -2px 0 var(--ink),2px -2px 0 var(--ink),-2px 2px 0 var(--ink),7px 7px 0 var(--ink);
+}
+.selo{position:absolute;top:-44px;right:-8px;width:108px;height:108px;
+  filter:drop-shadow(3px 0 0 var(--ink)) drop-shadow(-3px 0 0 var(--ink)) drop-shadow(0 3px 0 var(--ink)) drop-shadow(0 -3px 0 var(--ink)) drop-shadow(4px 4px 0 var(--ink));
+  animation:wiggle 2.4s ease-in-out infinite}
+.selo i{position:absolute;inset:0;background:var(--yellow);clip-path:var(--burst)}
+.selo > span{position:absolute;inset:0;display:grid;place-items:center;font-family:'Bangers',cursive;color:var(--red);font-size:1.6rem;line-height:.9;text-align:center;transform:rotate(12deg)}
+@keyframes wiggle{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(8deg) scale(1.06)}}
+
+.panel{position:relative;margin-top:36px;background:#fff;border:4px solid var(--ink);box-shadow:var(--shadow);border-radius:8px;padding:18px 16px}
+.panel-title{
+  font-family:'Bangers',cursive;font-weight:400;letter-spacing:.05em;font-size:1.7rem;line-height:1.1;background:var(--yellow);
+  border:3px solid var(--ink);display:inline-block;padding:3px 14px;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink);margin:-38px 0 10px -6px;
+}
+.panel-sub{font-weight:600;margin-bottom:10px}
+
+.squad{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:520px){.squad{grid-template-columns:repeat(4,1fr)}}
+.sq{position:relative;background:var(--c);border:3px solid var(--ink);border-radius:12px;padding:10px 8px 6px;box-shadow:4px 4px 0 var(--ink);text-align:center}
+.sq .name{display:block;font-family:'Bangers',cursive;letter-spacing:.05em;font-size:1.15rem;margin-top:2px}
+.sq .jumper{width:86%;margin:0 auto}
+.sq.hit .jumper{animation:jump .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes jump{0%{transform:translateY(0)}35%{transform:translateY(-34%) rotate(-6deg) scale(1.05)}70%{transform:translateY(0) scale(1.08,.92)}100%{transform:none}}
+.sq .pow{position:absolute;top:8%;left:0;right:0;margin:auto;width:max-content;z-index:3;opacity:0;pointer-events:none;
+  filter:drop-shadow(2px 0 0 var(--ink)) drop-shadow(-2px 0 0 var(--ink)) drop-shadow(0 2px 0 var(--ink)) drop-shadow(0 -2px 0 var(--ink)) drop-shadow(3px 3px 0 var(--ink))}
+.sq .pow i{position:absolute;inset:-45% -22%;background:var(--yellow);clip-path:var(--burst)}
+.sq .pow span{position:relative;font-family:'Bangers',cursive;font-size:1.7rem;color:var(--red);white-space:nowrap;letter-spacing:.03em}
+.sq.hit .pow{animation:powPop 1s ease-out}
+@keyframes powPop{0%{opacity:0;transform:scale(.2) rotate(-20deg)}25%{opacity:1;transform:scale(1.25) rotate(6deg)}70%{opacity:1;transform:scale(1) rotate(0)}100%{opacity:0;transform:scale(1.1) translateY(-20px)}}
+
+.info-row{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:2px dashed #d5d5d5}
+.info-row:last-of-type{border:0}
+.info-ic{flex:none;width:48px;height:48px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink);display:grid;place-items:center;font-size:1.4rem}
+.info-row small{display:block;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:#555}
+.info-row b{font-size:1.15rem;line-height:1.2}
+.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media (max-width:360px){.btn-row{grid-template-columns:1fr}}
+
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cbox{background:var(--blue);color:#fff;border:3px solid var(--ink);border-radius:10px;box-shadow:3px 3px 0 var(--ink);text-align:center;padding:8px 2px 4px}
+.cbox:nth-child(2){background:var(--red)}.cbox:nth-child(3){background:var(--purple)}.cbox:nth-child(4){background:var(--green-d)}
+.cbox b{display:block;font-family:'Bangers',cursive;font-weight:400;font-size:clamp(1.9rem,9vw,2.7rem);line-height:1;letter-spacing:.03em;text-shadow:2px 2px 0 var(--ink)}
+.cbox span{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.count-msg{font-family:'Bangers',cursive;font-size:1.8rem;text-align:center;color:var(--red);letter-spacing:.04em}
+
+.field{margin-bottom:16px}
+.field > label,.legend{display:block;font-weight:800;margin-bottom:6px;font-size:1.05rem}
+fieldset{border:0;min-width:0}
+input[type=text],textarea{
+  width:100%;font:inherit;font-size:1.05rem;padding:10px 12px;border:3px solid var(--ink);border-radius:10px;background:#fffdf5;color:var(--ink);
+}
+textarea{resize:vertical;min-height:84px}
+input[aria-invalid="true"]{border-color:var(--red);background:#fff0f0}
+.error{color:var(--red-d);font-weight:800;font-size:.95rem;min-height:1.3em;margin-top:4px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice{display:block;border:3px solid var(--ink);border-radius:12px;padding:10px 6px;text-align:center;font-family:'Bangers',cursive;letter-spacing:.05em;font-size:1.35rem;box-shadow:3px 3px 0 var(--ink);background:#fff;cursor:pointer;transition:transform .1s}
+input:checked + .choice.yes{background:var(--green-d);color:#fff;transform:rotate(-2deg)}
+input:checked + .choice.no{background:var(--red);color:#fff;transform:rotate(2deg)}
+input:focus-visible + .choice{outline:4px solid var(--yellow);outline-offset:3px;box-shadow:0 0 0 8px var(--ink)}
+.counters{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:360px){.counters{grid-template-columns:1fr}}
+.counter{border:3px solid var(--ink);border-radius:12px;padding:8px;background:#fffdf5;text-align:center}
+.counter .lbl{font-weight:800;display:block;margin-bottom:4px}
+.counter .ctl{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.counter button{width:44px;height:44px;border-radius:50%;border:3px solid var(--ink);background:var(--yellow);font-size:1.5rem;font-weight:800;line-height:1;box-shadow:2px 2px 0 var(--ink)}
+.counter button:active{transform:translate(2px,2px);box-shadow:none}
+.counter output{font-family:'Bangers',cursive;font-size:2rem;min-width:2ch}
+.alt{text-align:center;margin-top:12px;font-size:1rem}
+.alt a{font-weight:800}
+
+footer{text-align:center;margin-top:36px}
+footer p{margin-top:14px;font-weight:600;font-size:.95rem}
+
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:200;overflow:hidden}
+.confetti i{position:absolute;top:-24px;width:10px;height:14px;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--x),110vh) rotate(760deg)}}
+#toast{
+  position:fixed;left:50%;bottom:20px;z-index:150;transform:translate(-50%,150%);transition:transform .35s cubic-bezier(.2,1.4,.4,1);
+  background:var(--yellow);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:12px;padding:10px 18px;
+  font-family:'Bangers',cursive;letter-spacing:.05em;font-size:1.3rem;width:max-content;max-width:calc(100vw - 32px);text-align:center;
+}
+#toast.show{transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<button id="soundBtn" type="button" aria-label="Desligar o som" aria-pressed="true">🔊</button>
+
+<!-- ================= TELA 1: ABERTURA ================= -->
+<section id="intro" class="screen active" aria-label="Abertura do convite">
+  <div class="rays" aria-hidden="true"></div>
+  <div class="intro-content">
+    <p class="intro-kicker">Atenção, herói!</p>
+    <h1 class="intro-title">Você recebeu uma <span>missão</span></h1>
+    <button id="heroBtn" class="intro-hero" type="button" aria-label="Tocar no herói para abrir a missão">
+      <div class="float" data-hero="jl" data-pose="fly"></div>
+    </button>
+    <div class="tap-seal" aria-hidden="true">👆 Toque no herói!</div>
+  </div>
+  <div class="boom" aria-hidden="true"></div>
+</section>
+
+<!-- ================= TELA 2: HISTÓRIA ================= -->
+<section id="story" class="screen" aria-label="História em quadrinhos">
+  <button id="skipBtn" class="chip" type="button" aria-label="Pular a história e ver o convite">Pular ⏭</button>
+
+  <div class="book" id="book">
+    <!-- Página 1 -->
+    <article class="page" aria-label="Página 1 de 5">
+      <div class="scene sunset alert">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <defs>
+            <pattern id="win" width="14" height="16" patternUnits="userSpaceOnUse"><rect x="4" y="4" width="6" height="7" fill="#ffd166"/></pattern>
+          </defs>
+          <circle cx="150" cy="235" r="62" fill="#ffe66d"/>
+          <g fill="#8e3b6b">
+            <rect x="0" y="250" width="50" height="150"/><rect x="45" y="212" width="40" height="188"/><rect x="90" y="262" width="60" height="138"/>
+            <rect x="158" y="200" width="46" height="200"/><rect x="208" y="240" width="50" height="160"/><rect x="255" y="218" width="50" height="182"/>
+          </g>
+          <g fill="#3d1a4f" stroke="#14142b" stroke-width="3">
+            <rect x="-5" y="300" width="60" height="110"/><rect x="52" y="272" width="46" height="138"/><rect x="100" y="312" width="70" height="98"/>
+            <rect x="168" y="262" width="50" height="148"/><rect x="220" y="292" width="90" height="118"/>
+          </g>
+          <g fill="url(#win)">
+            <rect x="-5" y="300" width="60" height="110"/><rect x="52" y="272" width="46" height="138"/><rect x="100" y="312" width="70" height="98"/>
+            <rect x="168" y="262" width="50" height="148"/><rect x="220" y="292" width="90" height="118"/>
+          </g>
+          <line x1="193" y1="262" x2="193" y2="246" stroke="#14142b" stroke-width="4"/>
+          <circle class="siren-light" cx="193" cy="240" r="8" stroke="#14142b" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="cap">Enquanto isso, na cidade...</div>
+      <div class="ono pop" style="--d:.3s;--rot:8deg;top:12%;right:7%"><i class="bg"></i><span>UÓN! UÓN!</span></div>
+      <div class="slot pop" style="--d:.7s;left:27%;bottom:4%;width:46%" data-hero="raio"></div>
+      <div class="balloon pop" style="--d:1.2s;top:31%;left:6%;--tx:70%">
+        <span class="who">Capitão Raio</span>Alerta! Chegou uma convocação urgente!
+      </div>
+      <span class="page-num" aria-hidden="true">1/5</span>
+    </article>
+
+    <!-- Página 2 -->
+    <article class="page" aria-label="Página 2 de 5">
+      <div class="scene hq"></div>
+      <div class="cap">No quartel-general...</div>
+      <div class="monitor" aria-hidden="true"><b>⚠ ALERTA!</b><small>CONVOCAÇÃO RECEBIDA</small></div>
+      <div class="ono pop" style="--d:.2s;--rot:-10deg;top:6%;right:5%"><i class="bg" style="background:var(--blue)"></i><span style="font-size:clamp(1.4rem,6vw,2rem)">BIP! BIP!</span></div>
+      <div class="slot pop" style="--d:.4s;left:2%;bottom:3%;width:38%" data-hero="estrela"></div>
+      <div class="slot pop b2" style="--d:.6s;right:2%;bottom:3%;width:38%" data-hero="turbo"></div>
+      <div class="balloon pop" style="--d:.9s;top:36%;left:4%;max-width:58%;--tx:30px">
+        <span class="who" style="color:var(--purple)">Estrela</span>Quem está chamando o esquadrão?
+      </div>
+      <div class="balloon pop" style="--d:2s;top:50%;right:4%;max-width:58%;--tx:70%">
+        <span class="who" style="color:var(--green-d)">Turbo</span>É o herói mais esperado do ano!
+      </div>
+      <span class="page-num" aria-hidden="true">2/5</span>
+    </article>
+
+    <!-- Página 3 -->
+    <article class="page" aria-label="Página 3 de 5">
+      <div class="scene rays-red"><div class="speed"></div></div>
+      <div class="cap">De repente...</div>
+      <div class="ono pop" style="--d:.9s;--rot:-8deg;top:11%;right:7%"><i class="bg" style="background:var(--blue)"></i><span>WHOOSH!</span></div>
+      <div class="slot fly" style="--d:.15s;left:16%;top:22%;width:64%" data-hero="jl" data-pose="fly"></div>
+      <div class="balloon pop" style="--d:1.5s;bottom:6%;left:5%;right:5%;max-width:none;--tx:60%">
+        <span class="who" style="color:var(--blue)" data-f="nome">João Lucas</span>Sou eu, <span data-f="nome">João Lucas</span>! Vou fazer <strong><span data-f="idade">5</span> ANOS!</strong>
+      </div>
+      <span class="page-num" aria-hidden="true">3/5</span>
+    </article>
+
+    <!-- Página 4 -->
+    <article class="page" aria-label="Página 4 de 5">
+      <div class="scene blue-dots"></div>
+      <div class="info-card pop" style="--d:.2s">
+        <div class="ih">📂 Missão</div>
+        <p><span class="ic" aria-hidden="true">📅</span><span><span data-f="diaSemana">Quinta-feira</span>, <span data-f="dataLonga">26 de novembro de 2026</span></span></p>
+        <p><span class="ic" aria-hidden="true">⏰</span><span>Às <span data-f="hora">15:00</span></span></p>
+        <p><span class="ic" aria-hidden="true">📍</span><span data-f="local">Enjoy Kids – Shopping Liv Mall</span></p>
+      </div>
+      <div class="slot pop" style="--d:.8s;left:2%;bottom:3%;width:40%" data-hero="jl"></div>
+      <div class="balloon pop" style="--d:1.3s;bottom:26%;right:4%;max-width:56%;--tx:16px">
+        <span class="who" style="color:var(--blue)" data-f="nome">João Lucas</span>Venha comemorar comigo com muita aventura!
+      </div>
+      <span class="page-num" aria-hidden="true">4/5</span>
+    </article>
+
+    <!-- Página 5 -->
+    <article class="page" aria-label="Página 5 de 5">
+      <div class="scene rays-gold"></div>
+      <div class="ono center pop" style="--d:.3s;--rot:-4deg;top:7%"><i class="bg"></i><span style="font-size:clamp(2.6rem,13vw,4.2rem)"><span data-f="idade">5</span> ANOS!</span></div>
+      <div class="balloon pop" style="--d:1.3s;top:30%;left:7%;right:7%;max-width:none;text-align:center;--tx:47%">
+        <span class="who">Esquadrão</span>E você foi escolhido para o nosso esquadrão!
+      </div>
+      <div class="slot pop" style="--d:.6s;left:0;bottom:17%;width:25%" data-hero="raio"></div>
+      <div class="slot pop b3" style="--d:.8s;left:52%;bottom:17%;width:24%" data-hero="estrela"></div>
+      <div class="slot pop b4" style="--d:.9s;left:75%;bottom:17%;width:25%" data-hero="turbo"></div>
+      <div class="slot pop b2" style="--d:.7s;left:22%;bottom:15%;width:32%" data-hero="jl"></div>
+      <div class="accept-wrap pop" style="--d:1.9s">
+        <button id="acceptBtn" class="btn btn-accept" type="button" aria-label="Aceitar missão e ver o convite">Aceitar missão! ✅</button>
+      </div>
+    </article>
+  </div>
+
+  <nav class="story-nav" aria-label="Navegação da história">
+    <button id="prevBtn" class="nav-btn" type="button" aria-label="Página anterior">◀</button>
+    <div class="dots" id="dots"></div>
+    <button id="nextBtn" class="nav-btn" type="button" aria-label="Próxima página">▶</button>
+  </nav>
+  <p class="hint">Toque na página para virar • setas ← → no teclado</p>
+</section>
+
+<!-- ================= TELA 3: CONVITE ================= -->
+<main id="invite" class="screen" aria-label="Convite completo">
+  <div class="wrap">
+    <header class="banner reveal" style="--i:0">
+      <div class="selo" aria-hidden="true"><i></i><span><span data-f="idade">5</span><br>ANOS!</span></div>
+      <p>Você é convidado para o aniversário do</p>
+      <h1 id="inviteTitle" tabindex="-1" data-f="nomeCaps">JOÃO LUCAS</h1>
+      <p>🎂 Vamos comemorar <span data-f="idade">5</span> anos de muita aventura! 🎉</p>
+    </header>
+
+    <section class="panel reveal" style="--i:1" aria-labelledby="t-squad">
+      <h2 class="panel-title" id="t-squad">O Esquadrão</h2>
+      <p class="panel-sub">Toque nos heróis!</p>
+      <div class="squad" id="squad"></div>
+    </section>
+
+    <section class="panel reveal" style="--i:2" aria-labelledby="t-mission">
+      <h2 class="panel-title" id="t-mission" style="background:var(--red);color:#fff">Missão especial</h2>
+      <div class="info-row"><span class="info-ic" aria-hidden="true">📅</span><div><small>Data</small><b><span data-f="diaSemana">Quinta-feira</span>, <span data-f="dataLonga">26 de novembro de 2026</span></b></div></div>
+      <div class="info-row"><span class="info-ic" aria-hidden="true">⏰</span><div><small>Horário</small><b data-f="hora">15:00</b></div></div>
+      <div class="info-row"><span class="info-ic" aria-hidden="true">📍</span><div><small>Local</small><b data-f="local">Enjoy Kids – Shopping Liv Mall</b></div></div>
+      <div class="btn-row">
+        <a id="mapBtn" class="btn btn-blue" href="#" target="_blank" rel="noopener" aria-label="Ver o local no Google Maps">🗺️ Ver no mapa</a>
+        <a id="calBtn" class="btn btn-yellow" href="#" target="_blank" rel="noopener" aria-label="Salvar a festa no Google Agenda">📌 Salvar na agenda</a>
+      </div>
+    </section>
+
+    <section class="panel reveal" style="--i:3" aria-labelledby="t-count">
+      <h2 class="panel-title" id="t-count">Contagem regressiva</h2>
+      <div class="count" id="count" role="timer" aria-live="off">
+        <div class="cbox"><b id="cd-d">00</b><span>dias</span></div>
+        <div class="cbox"><b id="cd-h">00</b><span>horas</span></div>
+        <div class="cbox"><b id="cd-m">00</b><span>min</span></div>
+        <div class="cbox"><b id="cd-s">00</b><span>seg</span></div>
+      </div>
+      <p class="count-msg" id="countMsg" hidden></p>
+    </section>
+
+    <section class="panel reveal" style="--i:4" aria-labelledby="t-rsvp">
+      <h2 class="panel-title" id="t-rsvp" style="background:var(--green-d);color:#fff">Confirme sua presença</h2>
+      <form id="rsvp" novalidate>
+        <div class="field">
+          <label for="nome">Seu nome *</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" maxlength="80" required aria-describedby="nomeErr" placeholder="Ex.: Maria e família">
+          <div class="error" id="nomeErr" aria-live="polite"></div>
+        </div>
+
+        <fieldset class="field">
+          <legend class="legend">Você vem?</legend>
+          <div class="choices">
+            <div><input class="sr-only" type="radio" name="vai" id="vaiSim" value="sim" checked><label class="choice yes" for="vaiSim">Vou sim! 🦸</label></div>
+            <div><input class="sr-only" type="radio" name="vai" id="vaiNao" value="nao"><label class="choice no" for="vaiNao">Não poderei 😢</label></div>
+          </div>
+        </fieldset>
+
+        <div class="field" id="countersField">
+          <div class="counters">
+            <div class="counter">
+              <span class="lbl" id="lblAd">Adultos</span>
+              <div class="ctl">
+                <button type="button" data-c="ad" data-step="-1" aria-label="Diminuir adultos">−</button>
+                <output id="ad" aria-labelledby="lblAd" aria-live="polite">1</output>
+                <button type="button" data-c="ad" data-step="1" aria-label="Aumentar adultos">+</button>
+              </div>
+            </div>
+            <div class="counter">
+              <span class="lbl" id="lblCr">Crianças</span>
+              <div class="ctl">
+                <button type="button" data-c="cr" data-step="-1" aria-label="Diminuir crianças">−</button>
+                <output id="cr" aria-labelledby="lblCr" aria-live="polite">1</output>
+                <button type="button" data-c="cr" data-step="1" aria-label="Aumentar crianças">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="error" id="qtdErr" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+          <label for="recado">Recado para o <span data-f="nome">João Lucas</span> (opcional)</label>
+          <textarea id="recado" name="recado" maxlength="300" placeholder="Parabéns, herói! 💙"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-wa" aria-label="Confirmar presença pelo WhatsApp">💬 Confirmar no WhatsApp</button>
+        <p class="alt">Ou mande mensagem para<br><a id="phoneLink" href="#" target="_blank" rel="noopener"><span id="phoneTxt">(83) 99945-3996</span></a></p>
+      </form>
+    </section>
+
+    <footer class="reveal" style="--i:5">
+      <button id="replayBtn" class="btn btn-red" type="button" aria-label="Ver a história em quadrinhos de novo">📖 Ver a história de novo</button>
+      <p>Feito com 💙 para o nosso super-herói <span data-f="nome">João Lucas</span></p>
+    </footer>
+  </div>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO — edite aqui!
+   ===================================================================== */
+
+// Número que recebe as confirmações: DDI (55) + DDD + número, só dígitos.
+const WHATSAPP = "5583999453996";
+
+// Dados da festa
+const FESTA = {
+  aniversariante: "João Lucas",            // nome do aniversariante
+  idade: 5,                                 // idade que vai fazer
+  inicio: "2026-11-26T15:00:00-03:00",      // início (ISO, com fuso -03:00)
+  fim:    "2026-11-26T18:00:00-03:00",      // fim previsto (usado no Google Agenda)
+  fuso: "America/Fortaleza",                // fuso horário da festa
+  local: "Enjoy Kids – Shopping Liv Mall",  // nome do local
+  mapa: "Enjoy Kids Shopping Liv Mall"      // texto buscado no Google Maps
+};
+// Obs.: as meta tags de Open Graph (no <head>) são fixas; se mudar os dados, edite-as também.
+
+/* ===================================================================== */
+(() => {
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Textos derivados da data ---------- */
+const ini = new Date(FESTA.inicio), fim = new Date(FESTA.fim);
+const fmt = o => new Intl.DateTimeFormat("pt-BR", { timeZone: FESTA.fuso, ...o }).format(ini);
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const hh = fmt({ hour: "2-digit", hour12: false }).replace(/\D/g, "").padStart(2, "0");
+const mm = fmt({ minute: "2-digit" }).replace(/\D/g, "").padStart(2, "0");
+const TXT = {
+  nome: FESTA.aniversariante,
+  nomeCaps: FESTA.aniversariante.toUpperCase(),
+  idade: String(FESTA.idade),
+  diaSemana: cap(fmt({ weekday: "long" })),
+  dataLonga: fmt({ day: "numeric", month: "long", year: "numeric" }),
+  dataCurta: fmt({ day: "2-digit", month: "2-digit" }),
+  hora: `${hh}:${mm}`,
+  horaCurta: `${+hh}h${mm !== "00" ? mm : ""}`,
+  local: FESTA.local
+};
+$$("[data-f]").forEach(el => { const v = TXT[el.dataset.f]; if (v) el.textContent = v; });
+
+/* ---------- Heróis originais em SVG ---------- */
+const HEROES = {
+  raio:    { nome: "Capitão Raio", suit: "#e63946", cape: "#ffd60a", mask: "#ffd60a", belt: "#ffd60a", boot: "#ffd60a", embBg: "#ffd60a", emb: "#e63946", skin: "#f1c27d", hair: "#5a3825", icon: "bolt", som: "ZAP!",  bg: "#ffe0e3" },
+  jl:      { nome: FESTA.aniversariante, suit: "#1e6fd9", cape: "#e63946", mask: "#e63946", belt: "#ffd60a", boot: "#e63946", embBg: "#ffd60a", emb: "#e63946", skin: "#ffd3a8", hair: "#3b2414", icon: "jl", som: FESTA.idade + " ANOS!", bg: "#dbe9ff" },
+  estrela: { nome: "Estrela", suit: "#7b2cbf", cape: "#ffd60a", mask: "#ffd60a", belt: "#ffd60a", boot: "#ffd60a", embBg: "#ffd60a", emb: "#7b2cbf", skin: "#c68642", hair: "#2b1a10", icon: "star", som: "POW!", bg: "#efe0ff", pig: true },
+  turbo:   { nome: "Turbo", suit: "#2bb24c", cape: "#145a32", mask: "#145a32", belt: "#ffd60a", boot: "#145a32", embBg: "#ffffff", emb: "#e63946", skin: "#e0ac69", hair: "#d4a017", icon: "rocket", som: "VRUUM!", bg: "#dcf7e3" }
+};
+const K = "#14142b";
+function emblem(h) {
+  switch (h.icon) {
+    case "bolt": return `<path d="M104 149 L88 167 L99 167 L94 181 L112 160 L101 160 L107 149 Z" fill="${h.emb}" stroke-width="2.5"/>`;
+    case "jl": return `<text x="100" y="172" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="21" fill="${h.emb}" stroke="none">JL</text>`;
+    case "star": return `<polygon points="100,151 102.9,159.9 111.4,160.3 104.8,165.6 107,173.7 100,169 93,173.7 95.2,165.6 88.6,160.3 97.1,159.9" fill="${h.emb}" stroke-width="2"/>`;
+    case "rocket": return `<path d="M93 166 L88 174 L94 172 Z M107 166 L112 174 L106 172 Z" fill="${h.emb}" stroke-width="1.5"/><path d="M100 149 Q109 157 107 172 L93 172 Q91 157 100 149 Z" fill="${h.emb}" stroke-width="2.5"/><path d="M95 173 L100 181 L105 173 Z" fill="#ff8c00" stroke-width="2"/><circle cx="100" cy="160" r="3" fill="#fff" stroke-width="1.5"/>`;
+  }
+  return "";
+}
+function heroSVG(key, pose) {
+  const h = HEROES[key], fly = pose === "fly";
+  const armL = fly ? "M70 150 L46 128" : "M68 150 L48 178";
+  const armR = fly ? "M130 150 L160 104" : "M132 150 L152 178";
+  const fL = fly ? [44, 125] : [46, 181], fR = fly ? [162, 100] : [154, 181];
+  const capePath = fly
+    ? "M66 134 Q22 178 10 238 Q58 212 98 228 Q122 196 134 134 Z"
+    : "M64 134 Q42 196 46 238 Q100 250 154 238 Q158 196 136 134 Z";
+  return `<svg class="hero-svg" viewBox="0 0 200 250" role="img" aria-label="${h.nome}" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="${K}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="${capePath}" fill="${h.cape}"/>
+    <rect x="72" y="190" width="24" height="40" rx="10" fill="${h.suit}"/>
+    <rect x="104" y="190" width="24" height="40" rx="10" fill="${h.suit}"/>
+    <rect x="67" y="217" width="31" height="21" rx="9" fill="${h.boot}"/>
+    <rect x="102" y="217" width="31" height="21" rx="9" fill="${h.boot}"/>
+    <path d="M64 140 Q58 206 100 207 Q142 206 136 140 Z" fill="${h.suit}"/>
+    <rect x="62" y="184" width="76" height="11" rx="4" fill="${h.belt}"/>
+    <rect x="93" y="182" width="14" height="15" rx="3" fill="#fff" stroke-width="3"/>
+    <path d="${armL}" stroke-width="22"/><path d="${armL}" stroke="${h.suit}" stroke-width="12"/>
+    <path d="${armR}" stroke-width="22"/><path d="${armR}" stroke="${h.suit}" stroke-width="12"/>
+    <circle cx="${fL[0]}" cy="${fL[1]}" r="10" fill="${h.skin}"/>
+    <circle cx="${fR[0]}" cy="${fR[1]}" r="10" fill="${h.skin}"/>
+    <circle cx="100" cy="164" r="17" fill="${h.embBg}" stroke-width="4"/>
+    ${emblem(h)}
+    ${h.pig ? `<circle cx="40" cy="58" r="17" fill="${h.hair}"/><circle cx="160" cy="58" r="17" fill="${h.hair}"/>` : ""}
+    <circle cx="100" cy="84" r="58" fill="${h.skin}"/>
+    <path d="M44 78 Q40 26 100 24 Q160 26 156 78 Q146 54 128 58 Q118 40 100 52 Q84 40 72 58 Q54 54 44 78 Z" fill="${h.hair}"/>
+    <path d="M154 84 Q174 76 182 92 Q168 92 156 98 Z" fill="${h.mask}" stroke-width="4"/>
+    <path d="M42 80 Q100 62 158 80 Q161 96 152 107 Q126 98 100 106 Q74 98 48 107 Q39 96 42 80 Z" fill="${h.mask}"/>
+    <ellipse cx="78" cy="88" rx="13" ry="15" fill="#fff" stroke-width="4"/>
+    <ellipse cx="122" cy="88" rx="13" ry="15" fill="#fff" stroke-width="4"/>
+    <circle cx="80" cy="90" r="7" fill="${K}" stroke="none"/><circle cx="124" cy="90" r="7" fill="${K}" stroke="none"/>
+    <circle cx="83" cy="86" r="2.8" fill="#fff" stroke="none"/><circle cx="127" cy="86" r="2.8" fill="#fff" stroke="none"/>
+    <circle cx="62" cy="116" r="8" fill="#ff8fab" opacity=".75" stroke="none"/>
+    <circle cx="138" cy="116" r="8" fill="#ff8fab" opacity=".75" stroke="none"/>
+    <path d="M84 119 Q100 140 116 119 Z" fill="#c1121f" stroke-width="4"/>
+  </g></svg>`;
+}
+$$("[data-hero]").forEach(el => { el.innerHTML = heroSVG(el.dataset.hero, el.dataset.pose); });
+
+/* =====================================================================
+   ÁUDIO — trilha ORIGINAL gerada com Web Audio API (ré menor, 104 bpm)
+   Intro: tambores graves + cordas aceleradas em crescendo (4 compassos)
+   Tema: metais heroicos, caixa, pratos — em loop (8 compassos)
+   ===================================================================== */
+const Sound = (() => {
+  let ctx, master, musicBus, sfxBus, noiseBuf, step = 0, nextTime = 0, playing = false, muted = false;
+  const BPM = 104, S16 = 60 / BPM / 4;
+  const NOTE = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }, cache = {};
+  const n = s => {
+    if (cache[s]) return cache[s];
+    const m = s.match(/^([A-G])(#|b)?(\d)$/);
+    const midi = 12 * (+m[3] + 1) + NOTE[m[1]] + (m[2] === "#" ? 1 : m[2] === "b" ? -1 : 0);
+    return (cache[s] = 440 * Math.pow(2, (midi - 69) / 12));
+  };
+
+  function init() {
+    if (ctx) return true;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    ctx = new AC();
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -16; comp.ratio.value = 4; comp.attack.value = .005; comp.release.value = .2;
+    master = ctx.createGain(); master.gain.value = .9;
+    master.connect(comp); comp.connect(ctx.destination);
+    // reverb sintética
+    const len = Math.floor(ctx.sampleRate * 2.2), ir = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3); }
+    const rev = ctx.createConvolver(); rev.buffer = ir;
+    const wet = ctx.createGain(); wet.gain.value = .3; rev.connect(wet); wet.connect(master);
+    musicBus = ctx.createGain(); musicBus.gain.value = .5; musicBus.connect(master); musicBus.connect(rev);
+    sfxBus = ctx.createGain(); sfxBus.gain.value = .75; sfxBus.connect(master); sfxBus.connect(rev);
+    noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 3, ctx.sampleRate);
+    const nd = noiseBuf.getChannelData(0); for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+    return true;
+  }
+  const ok = () => ctx && !muted;
+
+  /* --- instrumentos --- */
+  function noise(t, dur, type, freq, v, out = musicBus, q) {
+    const s = ctx.createBufferSource(); s.buffer = noiseBuf;
+    const f = ctx.createBiquadFilter(); f.type = type; f.frequency.value = freq; if (q) f.Q.value = q;
+    const g = ctx.createGain(); g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.001, t + dur);
+    s.connect(f); f.connect(g); g.connect(out);
+    s.start(t, Math.random()); s.stop(t + dur + .05);
+    return { f, g };
+  }
+  function timp(t, f, v, out = musicBus) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = "sine"; o.frequency.setValueAtTime(f * 1.5, t); o.frequency.exponentialRampToValueAtTime(f, t + .08);
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(v, t + .01); g.gain.exponentialRampToValueAtTime(.001, t + 1.1);
+    o.connect(g); g.connect(out); o.start(t); o.stop(t + 1.2);
+    const o2 = ctx.createOscillator(), g2 = ctx.createGain();
+    o2.type = "triangle"; o2.frequency.value = f * 2;
+    g2.gain.setValueAtTime(v * .4, t); g2.gain.exponentialRampToValueAtTime(.001, t + .4);
+    o2.connect(g2); g2.connect(out); o2.start(t); o2.stop(t + .45);
+    noise(t, .12, "lowpass", 500, v * .5, out);
+  }
+  function kick(t, v, out = musicBus) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(42, t + .14);
+    g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.001, t + .35);
+    o.connect(g); g.connect(out); o.start(t); o.stop(t + .4);
+  }
+  function snare(t, v, out = musicBus) {
+    noise(t, .17, "highpass", 1200, v, out);
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = "triangle"; o.frequency.value = 190;
+    g.gain.setValueAtTime(v * .6, t); g.gain.exponentialRampToValueAtTime(.001, t + .09);
+    o.connect(g); g.connect(out); o.start(t); o.stop(t + .1);
+  }
+  const hat = (t, v) => noise(t, .045, "highpass", 7500, v);
+  const crash = (t, v, out = musicBus) => { noise(t, 1.8, "highpass", 4500, v, out); noise(t, .6, "bandpass", 3000, v * .5, out, .8); };
+  function strings(t, f, dur, v, cut) {
+    const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = cut; lp.Q.value = 1;
+    const g = ctx.createGain(); const end = t + dur;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .01); g.gain.linearRampToValueAtTime(v * .55, end); g.gain.linearRampToValueAtTime(0, end + .05);
+    lp.connect(g); g.connect(musicBus);
+    [-8, 8].forEach(d => { const o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f; o.detune.value = d; o.connect(lp); o.start(t); o.stop(end + .08); });
+  }
+  function pad(t, freqs, dur, v, att) {
+    const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1000;
+    const g = ctx.createGain(); const end = t + dur;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + att); g.gain.setValueAtTime(v, end); g.gain.linearRampToValueAtTime(0, end + .4);
+    lp.connect(g); g.connect(musicBus);
+    freqs.forEach(f => { const o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f; o.detune.value = Math.random() * 16 - 8; o.connect(lp); o.start(t); o.stop(end + .5); });
+  }
+  function bass(t, f, dur, v) {
+    const o = ctx.createOscillator(), lp = ctx.createBiquadFilter(), g = ctx.createGain();
+    o.type = "sawtooth"; o.frequency.value = f; lp.type = "lowpass"; lp.frequency.value = 650;
+    g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(v * .4, t + dur); g.gain.linearRampToValueAtTime(0, t + dur + .04);
+    o.connect(lp); lp.connect(g); g.connect(musicBus); o.start(t); o.stop(t + dur + .06);
+  }
+  function brass(t, f, dur, v, out = musicBus) {
+    const lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = t + dur;
+    lp.type = "lowpass"; lp.Q.value = 2;
+    lp.frequency.setValueAtTime(350, t); lp.frequency.linearRampToValueAtTime(3000, t + .07); lp.frequency.exponentialRampToValueAtTime(1600, t + .3);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .05);
+    g.gain.linearRampToValueAtTime(v * .8, t + Math.max(.06, Math.min(.2, dur * .5))); g.gain.setValueAtTime(v * .8, end); g.gain.linearRampToValueAtTime(0, end + .12);
+    lp.connect(g); g.connect(out);
+    const oscs = [["sawtooth", -7], ["sawtooth", 7], ["square", 0]].map(([type, det]) => {
+      const o = ctx.createOscillator(); o.type = type; o.frequency.value = f; o.detune.value = det; o.connect(lp); o.start(t); o.stop(end + .15); return o;
+    });
+    if (dur > .4) { // vibrato
+      const lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = 5.5;
+      lg.gain.setValueAtTime(0, t); lg.gain.linearRampToValueAtTime(9, end);
+      lfo.connect(lg); oscs.forEach(o => lg.connect(o.detune)); lfo.start(t); lfo.stop(end + .15);
+    }
+  }
+
+  /* --- composição original --- */
+  const OST = ["D3", "D3", "A3", "D3", "Bb3", "D3", "A3", "F3"];
+  const PROG = [["D3","F3","A3"],["Bb2","D3","F3"],["F3","A3","C4"],["C3","E3","G3"],["D3","F3","A3"],["Bb2","D3","F3"],["G2","Bb2","D3"],["A2","C#3","E3"]];
+  const MEL = [["D4",1.5],["A4",.5],["A4",2], ["Bb4",1.5],["A4",.5],["G4",1],["F4",1], ["A4",1.5],["C5",.5],["C5",2], ["E5",1],["D5",.5],["C5",.5],["G4",2],
+               ["D5",1.5],["A4",.5],["F4",1],["A4",1], ["Bb4",1],["D5",1],["F5",2], ["D5",1],["Bb4",1],["G4",1],["Bb4",1], ["A4",2],["C#5",1],["E5",1]];
+  const MELMAP = {}; { let pos = 0; MEL.forEach(([note, b]) => { MELMAP[pos] = { f: n(note), d: b * 4 }; pos += b * 4; }); }
+  const INTRO = 64, THEME = 128;
+
+  function intro(s, t) {
+    const bar = s >> 4, pos = s & 15, p = s / INTRO, g = .35 + .65 * p;
+    const D2 = n("D2"), A1 = n("A2") / 2;
+    if (s === 0) pad(t, [D2, n("A2"), n("D3"), n("A3")], INTRO * S16, .07, INTRO * S16 * .9);
+    // tambores graves
+    if (bar < 2) { if (pos === 0 || pos === 8) timp(t, D2, .55 * g); if (bar === 1 && pos === 14) timp(t, A1, .4 * g); }
+    else if (bar === 2) { if (pos % 4 === 0) timp(t, pos === 12 ? A1 : D2, .6 * g); }
+    else { if (pos < 8) { if (pos % 2 === 0) timp(t, D2, .6 * g); } else timp(t, pos % 2 ? A1 : D2, .3 + .45 * (pos - 8) / 8); }
+    // cordas aceleradas (colcheias -> semicolcheias), filtro abrindo
+    const cut = 500 + 3200 * p;
+    if (bar < 2) { if (pos % 2 === 0) strings(t, n(OST[(pos / 2) % 8]), S16 * 1.6, .09 * g, cut); }
+    else strings(t, n(OST[pos % 8]) * (bar === 3 ? 2 : 1), S16 * .9, .1 * g, cut);
+    // rufar de caixa
+    if (bar === 3) snare(t, .08 + .32 * (pos / 16));
+  }
+  function theme(k, loop, t) {
+    const bar = k >> 4, pos = k & 15, ch = PROG[bar];
+    if (pos === 0) {
+      pad(t, [n(ch[0]), ...ch.map(x => n(x) * 2)], 16 * S16, .045, .15);
+      timp(t, n(ch[0]) / 2, .5);
+      if (bar === 0 || bar === 4) crash(t, .3);
+    }
+    if (pos % 2 === 0) bass(t, n(ch[0]) / 2 * (pos % 4 === 2 ? 2 : 1), S16 * 1.8, .17);
+    strings(t, n(ch[[0, 1, 2, 1][pos % 4]]) * 2, S16 * .9, .04, 2300);
+    if (pos === 0 || pos === 8 || pos === 10) kick(t, .75);
+    if (pos === 4 || pos === 12) snare(t, .35);
+    if (bar === 7 && pos >= 12) snare(t, .14 + .06 * (pos - 12));
+    if (pos % 2 === 0) hat(t, .05);
+    const m = MELMAP[k];
+    if (m) {
+      brass(t, m.f, m.d * S16, .16);
+      brass(t, m.f / 2, m.d * S16, .08);
+      if (loop % 2 === 1) brass(t, m.f * 2, m.d * S16, .045);
+    }
+  }
+  function schedule(s, t) {
+    if (s < INTRO) intro(s, t);
+    else { const k = s - INTRO; theme(k % THEME, Math.floor(k / THEME), t); }
+  }
+  function tick() { while (nextTime < ctx.currentTime + .15) { schedule(step, nextTime); nextTime += S16; step++; } }
+
+  /* --- efeitos sonoros --- */
+  function whoosh() {
+    if (!ok()) return; const t = ctx.currentTime;
+    const { f, g } = noise(t, .55, "bandpass", 300, .001, sfxBus, 1.4);
+    f.frequency.setValueAtTime(300, t); f.frequency.exponentialRampToValueAtTime(2400, t + .22); f.frequency.exponentialRampToValueAtTime(500, t + .5);
+    g.gain.cancelScheduledValues(t); g.gain.setValueAtTime(.001, t); g.gain.exponentialRampToValueAtTime(.8, t + .15); g.gain.exponentialRampToValueAtTime(.001, t + .52);
+  }
+  function zap() {
+    if (!ok()) return; const t = ctx.currentTime;
+    [[0, "sawtooth", 2200, 140, .3], [.12, "square", 3000, 300, .18]].forEach(([d, type, a, b, v]) => {
+      const o = ctx.createOscillator(), g = ctx.createGain(); o.type = type;
+      o.frequency.setValueAtTime(a, t + d); o.frequency.exponentialRampToValueAtTime(b, t + d + .25);
+      g.gain.setValueAtTime(v, t + d); g.gain.exponentialRampToValueAtTime(.001, t + d + .28);
+      o.connect(g); g.connect(sfxBus); o.start(t + d); o.stop(t + d + .3);
+    });
+  }
+  function fanfare() {
+    if (!ok()) return; const t = ctx.currentTime + .02;
+    ["A4", "D5", "F#5"].forEach((x, i) => brass(t + i * .13, n(x), .12, .22, sfxBus));
+    [n("D5"), n("F#5"), n("A5"), n("D4")].forEach(f => brass(t + .39, f, .7, .15, sfxBus));
+    timp(t + .39, n("D2"), .6, sfxBus); crash(t + .39, .2, sfxBus);
+  }
+  function pow() {
+    if (!ok()) return; const t = ctx.currentTime;
+    noise(t, .35, "lowpass", 1800, .8, sfxBus); kick(t, 1, sfxBus); snare(t, .4, sfxBus);
+  }
+  function vroom() {
+    if (!ok()) return; const t = ctx.currentTime;
+    const lp = ctx.createBiquadFilter(), g = ctx.createGain(); lp.type = "lowpass"; lp.frequency.value = 1300;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.28, t + .05); g.gain.exponentialRampToValueAtTime(.001, t + .9);
+    lp.connect(g); g.connect(sfxBus);
+    [0, 18].forEach(det => { const o = ctx.createOscillator(); o.type = "sawtooth"; o.detune.value = det;
+      o.frequency.setValueAtTime(70, t); o.frequency.exponentialRampToValueAtTime(280, t + .45); o.frequency.exponentialRampToValueAtTime(190, t + .85);
+      o.connect(lp); o.start(t); o.stop(t + .9); });
+  }
+  function siren() {
+    if (!ok()) return; const t = ctx.currentTime + .3;
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = "triangle";
+    for (let i = 0; i < 6; i++) o.frequency.setValueAtTime(i % 2 ? 950 : 700, t + i * .22);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.1, t + .05); g.gain.setValueAtTime(.1, t + 1.25); g.gain.linearRampToValueAtTime(0, t + 1.35);
+    o.connect(g); g.connect(sfxBus); o.start(t); o.stop(t + 1.4);
+  }
+  function launch() {
+    if (!ok()) return; const t = ctx.currentTime;
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = "sawtooth";
+    o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(1400, t + .6);
+    g.gain.setValueAtTime(.001, t); g.gain.exponentialRampToValueAtTime(.18, t + .3); g.gain.exponentialRampToValueAtTime(.001, t + .7);
+    o.connect(g); g.connect(sfxBus); o.start(t); o.stop(t + .75);
+    whoosh(); crash(t + .3, .35, sfxBus); timp(t + .3, n("D2"), .8, sfxBus);
+  }
+
+  return {
+    start() { // chamado no primeiro toque (regra de autoplay dos celulares)
+      if (!init()) return;
+      if (!muted && ctx.state === "suspended") ctx.resume();
+      if (playing) return;
+      playing = true; step = 0; nextTime = ctx.currentTime + .9;
+      setInterval(tick, 25);
+      if (muted) ctx.suspend();
+    },
+    toggle() {
+      muted = !muted;
+      if (ctx) muted ? ctx.suspend() : ctx.resume();
+      return muted;
+    },
+    pauseHidden(hidden) { if (ctx && !muted) hidden ? ctx.suspend() : ctx.resume(); },
+    whoosh, zap, fanfare, pow, vroom, siren, launch
+  };
+})();
+
+/* ---------- Botão de som ---------- */
+const soundBtn = $("#soundBtn");
+soundBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  const m = Sound.toggle();
+  soundBtn.textContent = m ? "🔇" : "🔊";
+  soundBtn.setAttribute("aria-pressed", String(!m));
+  soundBtn.setAttribute("aria-label", m ? "Ligar o som" : "Desligar o som");
+});
+document.addEventListener("visibilitychange", () => Sound.pauseHidden(document.hidden));
+
+/* ---------- Telas ---------- */
+const screens = $$(".screen");
+function show(id) {
+  screens.forEach(s => s.classList.toggle("active", s.id === id));
+  window.scrollTo(0, 0);
+}
+
+/* ---------- Abertura ---------- */
+const intro = $("#intro");
+let launched = false;
+function startAll() {
+  if (launched) return; launched = true;
+  Sound.start(); Sound.launch();
+  intro.classList.add("launch");
+  setTimeout(() => { show("story"); startStory(); }, reduce ? 300 : 1150);
+}
+intro.addEventListener("click", startAll);
+
+/* ---------- História ---------- */
+const pages = $$(".page"), dotsBox = $("#dots"), prevBtn = $("#prevBtn"), nextBtn = $("#nextBtn");
+let cur = 0;
+pages.forEach((_, i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.setAttribute("aria-label", `Ir para a página ${i + 1}`);
+  b.addEventListener("click", () => goTo(i));
+  dotsBox.appendChild(b);
+});
+const dots = $$("button", dotsBox);
+function render() {
+  pages.forEach((p, i) => {
+    p.style.zIndex = pages.length - i;
+    p.classList.toggle("flipped", i < cur);
+    const act = i === cur;
+    p.setAttribute("aria-hidden", String(!act));
+    if (act) p.removeAttribute("inert"); else { p.setAttribute("inert", ""); p.classList.remove("show"); }
+  });
+  const p = pages[cur];
+  p.classList.remove("show"); void p.offsetWidth; p.classList.add("show");
+  dots.forEach((d, i) => d.setAttribute("aria-current", String(i === cur)));
+  prevBtn.disabled = cur === 0;
+  nextBtn.disabled = cur === pages.length - 1;
+  if (cur === 0) Sound.siren();
+}
+function goTo(i) {
+  i = Math.max(0, Math.min(pages.length - 1, i));
+  if (i === cur) return;
+  cur = i; Sound.whoosh(); render();
+}
+const next = () => goTo(cur + 1), prev = () => goTo(cur - 1);
+function startStory() { cur = 0; render(); }
+prevBtn.addEventListener("click", prev);
+nextBtn.addEventListener("click", next);
+
+// toque na página / deslizar o dedo
+const book = $("#book");
+let px = null, swiped = false;
+book.addEventListener("pointerdown", e => { px = e.clientX; swiped = false; });
+book.addEventListener("pointerup", e => {
+  if (px === null) return;
+  const dx = e.clientX - px; px = null;
+  if (Math.abs(dx) > 50) { swiped = true; dx < 0 ? next() : prev(); }
+});
+book.addEventListener("click", e => {
+  if (swiped) { swiped = false; return; }
+  if (e.target.closest("button, a")) return;
+  next();
+});
+document.addEventListener("keydown", e => {
+  if (!$("#story").classList.contains("active")) return;
+  if (e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); next(); }
+  if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); prev(); }
+});
+
+$("#skipBtn").addEventListener("click", () => openInvite(false));
+$("#acceptBtn").addEventListener("click", () => openInvite(true));
+
+/* ---------- Convite ---------- */
+const invite = $("#invite");
+function openInvite(celebrate) {
+  show("invite");
+  invite.classList.remove("on"); void invite.offsetWidth; invite.classList.add("on");
+  $("#inviteTitle").focus({ preventScroll: true });
+  if (celebrate) { Sound.fanfare(); confetti(); }
+}
+$("#replayBtn").addEventListener("click", () => { show("story"); startStory(); Sound.whoosh(); });
+
+// Esquadrão
+const SFX = { raio: Sound.zap, jl: Sound.fanfare, estrela: Sound.pow, turbo: Sound.vroom };
+const squad = $("#squad");
+["raio", "jl", "estrela", "turbo"].forEach(key => {
+  const h = HEROES[key];
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "sq"; b.style.setProperty("--c", h.bg);
+  b.setAttribute("aria-label", `${h.nome}: tocar para ouvir ${h.som}`);
+  b.innerHTML = `<div class="pow" aria-hidden="true"><i></i><span>${h.som}</span></div><div class="jumper">${heroSVG(key)}</div><span class="name">${h.nome}</span>`;
+  b.addEventListener("click", () => {
+    b.classList.remove("hit"); void b.offsetWidth; b.classList.add("hit");
+    SFX[key]();
+  });
+  squad.appendChild(b);
+});
+
+// Mapa e agenda
+const gcal = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+$("#mapBtn").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(FESTA.mapa);
+$("#calBtn").href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+  + "&text=" + encodeURIComponent(`Aniversário de ${FESTA.idade} anos do ${FESTA.aniversariante} 🦸`)
+  + "&dates=" + gcal(ini) + "/" + gcal(fim)
+  + "&details=" + encodeURIComponent(`Missão especial: festa de super-heróis do ${FESTA.aniversariante}! ${location.protocol.startsWith("http") ? location.href : ""}`)
+  + "&location=" + encodeURIComponent(FESTA.local)
+  + "&ctz=" + encodeURIComponent(FESTA.fuso);
+
+// Contagem regressiva
+const cd = { d: $("#cd-d"), h: $("#cd-h"), m: $("#cd-m"), s: $("#cd-s") };
+const pad2 = x => String(x).padStart(2, "0");
+let cdTimer;
+function updateCount() {
+  const now = Date.now(), diff = ini - now;
+  if (diff <= 0) {
+    $("#count").hidden = true; const msg = $("#countMsg"); msg.hidden = false;
+    msg.textContent = now < fim ? "É HOJE! A festa está rolando! 🎉" : "Obrigado, heróis! Foi incrível! 💙";
+    clearInterval(cdTimer); return;
+  }
+  const s = Math.floor(diff / 1000);
+  cd.d.textContent = pad2(Math.floor(s / 86400));
+  cd.h.textContent = pad2(Math.floor(s % 86400 / 3600));
+  cd.m.textContent = pad2(Math.floor(s % 3600 / 60));
+  cd.s.textContent = pad2(s % 60);
+}
+cdTimer = setInterval(updateCount, 1000); updateCount();
+
+/* ---------- Confirmação de presença ---------- */
+const form = $("#rsvp"), nome = $("#nome"), nomeErr = $("#nomeErr"), qtdErr = $("#qtdErr");
+const counts = { ad: 1, cr: 1 };
+$$("[data-c]").forEach(b => b.addEventListener("click", () => {
+  const k = b.dataset.c;
+  counts[k] = Math.max(0, Math.min(20, counts[k] + +b.dataset.step));
+  $("#" + k).textContent = counts[k];
+  qtdErr.textContent = "";
+}));
+const vaiSim = $("#vaiSim");
+$$('input[name="vai"]').forEach(r => r.addEventListener("change", () => {
+  $("#countersField").hidden = !vaiSim.checked;
+}));
+nome.addEventListener("input", () => { if (nome.value.trim()) { nome.removeAttribute("aria-invalid"); nomeErr.textContent = ""; } });
+
+const phoneFmt = (() => { const d = WHATSAPP.replace(/\D/g, "").replace(/^55/, ""); return `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}`; })();
+$("#phoneTxt").textContent = phoneFmt;
+$("#phoneLink").href = `https://wa.me/${WHATSAPP}`;
+$("#phoneLink").setAttribute("aria-label", `Abrir conversa no WhatsApp com ${phoneFmt}`);
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const nm = nome.value.trim(), rec = $("#recado").value.trim(), vai = vaiSim.checked;
+  if (!nm) {
+    nome.setAttribute("aria-invalid", "true");
+    nomeErr.textContent = "⚠ Ops! Digite seu nome, herói.";
+    nome.focus(); return;
+  }
+  if (vai && counts.ad + counts.cr === 0) { qtdErr.textContent = "⚠ Informe pelo menos 1 pessoa."; return; }
+  const L = vai
+    ? [`🦸 Oi! Confirmo presença no aniversário de ${FESTA.idade} anos do ${FESTA.aniversariante}!`,
+       `Nome: ${nm}`, `Adultos: ${counts.ad}`, `Crianças: ${counts.cr}`,
+       `📅 ${TXT.dataCurta} às ${TXT.horaCurta} · ${FESTA.local.replace("–", "-")}`]
+    : [`🦸 Oi! Infelizmente não poderei ir ao aniversário de ${FESTA.idade} anos do ${FESTA.aniversariante}.`, `Nome: ${nm}`];
+  if (rec) L.push(`Recado: ${rec}`);
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(L.join("\n"))}`;
+  if (vai) { Sound.fanfare(); confetti(); toast("Missão aceita! Abrindo o WhatsApp... 🚀"); }
+  else toast("Que pena! Abrindo o WhatsApp... 💙");
+  const w = window.open(url, "_blank", "noopener");
+  if (!w) location.href = url;
+});
+
+/* ---------- Extras ---------- */
+let toastT;
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 3200);
+}
+function confetti(qtd = 80) {
+  if (reduce) return;
+  const box = document.createElement("div"); box.className = "confetti"; box.setAttribute("aria-hidden", "true");
+  const cols = ["#e63946", "#1e6fd9", "#ffd60a", "#2bb24c", "#7b2cbf", "#ff8c00"];
+  for (let i = 0; i < qtd; i++) {
+    const s = document.createElement("i");
+    s.style.left = Math.random() * 100 + "%";
+    s.style.background = cols[i % cols.length];
+    s.style.setProperty("--x", (Math.random() * 160 - 80) + "px");
+    s.style.animationDuration = (2 + Math.random() * 2) + "s";
+    s.style.animationDelay = Math.random() * .6 + "s";
+    if (i % 3 === 0) s.style.borderRadius = "50%";
+    box.appendChild(s);
+  }
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 5000);
+}
+})();
+</script>
+</body>
+</html>
